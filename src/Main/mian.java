@@ -1,4 +1,4 @@
-package Main;
+        package Main;
 
-public class mian {
-}
+        public class mian {
+        }
