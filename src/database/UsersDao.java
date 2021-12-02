@@ -11,11 +11,9 @@ import java.sql.Statement;
 import java.time.LocalDate;
 import java.util.logging.Level;
 
-import users.singelton.Admin;
-import users.singelton.Editore;
-import users.singelton.Scrittore;
-import users.singelton.TempUser;
-import users.singelton.User;
+import user.Admin;
+import user.TempUser;
+import user.User;
 import logger.Log;
 
 public class UsersDao  {
@@ -304,20 +302,7 @@ public class UsersDao  {
     		a=new Admin(u);
     		return a;
     	}
-    	else if(r.contentEquals("E"))
-    	{
-    		
-    		Editore e;
-    		e=new Editore(u);
-    		return e;
-   		
-    	}
-    	else if(r.contentEquals("W"))
-    	{
-    		Scrittore w;
-    		w=new Scrittore(u);
-    		return w;
-    	}
+
 	return null;
 
     }
