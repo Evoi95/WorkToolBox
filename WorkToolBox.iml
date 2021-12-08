@@ -7,7 +7,18 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="3.4" level="project" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://C:/Program Files/Java/jdk-15.0.2/lib/javafx-sdk-15" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" exported="" name="mysql-connector-java-8.0" level="project" />
+    <orderEntry type="library" exported="" name="Java fx 15" level="project" />
+    <orderEntry type="library" exported="" name="My Batis 3.4.5" level="project" />
   </component>
   <component name="sonarModuleSettings">
     <option name="alternativeWorkingDirPath" value="" />

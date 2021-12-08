@@ -12,7 +12,7 @@ public class ConnToDb
 
 	protected static Connection conn = null;
 
-	static Config c =new Config();
+	public static Config c =new Config();
 	private static String connessione="Tentativo di conessione al server..........\\\\n";
 	protected static String url2;
 	

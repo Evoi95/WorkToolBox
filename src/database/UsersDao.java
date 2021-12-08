@@ -36,8 +36,6 @@ public class UsersDao  {
     public static boolean createUser(User u) throws SQLException
     {
     	LocalDate d=u.getDataDiNascita();
-    	
-    	
     	try 
 		{
 			if (ConnToDb.connection())
