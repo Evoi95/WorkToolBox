@@ -174,8 +174,8 @@ public class UsersDao  {
     	}
     	return -1 ;
     }
-     
-    //Questo check
+
+	//Questo check
     public static int checkTempUser(TempUser uT) throws SQLException
     {
     	// ritorna int per motivi legati al controller
@@ -914,7 +914,6 @@ public class UsersDao  {
     	// errore
     	return null;
     }
-	
 
 	public static  void getListaUtenti() throws IOException  {
 		
@@ -974,9 +973,7 @@ public class UsersDao  {
 			}           
            }
 		}
-            
-	
-	
+
 	public static TempUser getTempUserSingolo(TempUser uT) throws SQLException
 	{
 		int id=uT.getIdU();
@@ -1122,9 +1119,9 @@ public class UsersDao  {
 	return uT;
 }
 
-private UsersDao()
-{
+	private UsersDao()
+	{
 	
-}
+	}
 
 }

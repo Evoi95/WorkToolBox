@@ -22,17 +22,6 @@ public class Config {
 	}
 	
 	
-	public Config(String user, String pwd,String database ,String driver, String url) {
-
-		String host = "localhost";
-		String port = "3306";
-		this.user = user;
-		this.pwd = pwd;
-		this.database = database;
-		this.driver = driver;
-		this.url = url;
-	}
-
 
 	public String getUser()
 	{
@@ -50,7 +39,6 @@ public class Config {
 	{
 		return this.url;
 	}
-	public String getDatabase(){ return  this.database;}
-	
+
 	
 }
