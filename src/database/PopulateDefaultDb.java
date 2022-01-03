@@ -21,92 +21,36 @@ public class PopulateDefaultDb {
 
  static boolean populateDefaultDb() throws FileNotFoundException
 	{
-		if(	createLibri() && createGiornale() && createRivista() && createUser() && createNegozio())
+		if(	 creaCalendario() && createUser())
 		{
 			 state=true;
 		}
 		return state;
 	}
-	
-	private static boolean createLibri() 
-	{
-		Log.logger.log(Level.INFO,"---------Chiamo stored insLibri---------\n\n");
-		try 
-		{
-			
-			conn=ConnToDb.generalConnection();
-			  sr = new ScriptRunner(conn);
-			 
-			 sr.setSendFullScript(true);
 
-			 Reader reader = new BufferedReader(new FileReader("FileSql/storedInsLibri.sql"));
-		      //Running the script
-		      sr.runScript(reader);
-			
+	private static boolean creaCalendario()
+	{
+		Log.logger.log(Level.INFO,"<----- STO ESEGUENDO L'OPERAZIONE DI INSERIMENTO DI EVENTI DI PROVA -----> ");
+		try
+		{
+			conn=ConnToDb.generalConnection();
+			sr = new ScriptRunner(conn);
+
+			sr.setSendFullScript(true);
+
+			Reader reader = new BufferedReader(new FileReader("File_SQL/InserimentoCalendario.sql"));
+			//Running the script
+			sr.runScript(reader);
+
 
 			return true;
 		}
-	
-		catch(FileNotFoundException | RuntimeSqlException e1) 
+		catch(FileNotFoundException | RuntimeSqlException e1)
 		{
 			Log.logger.log(Level.SEVERE, "Errore in mysql", e1);
 		}
-		
-		return false;
-	}
-
-	private static boolean createGiornale() throws FileNotFoundException
-	{
-		Log.logger.log(Level.INFO,"---------Chiamo stored insGiornali---------\n\n");
-
-		try {
-			conn=ConnToDb.generalConnection();
-			  sr = new ScriptRunner(conn);
-			 
-			 	
-			 sr.setSendFullScript(true);
-
-			 Reader reader = new BufferedReader(new FileReader("FileSql/stroredInsGiornali.sql"));
-		      //Running the script
-		      sr.runScript(reader);
-		      return true;
-		} 
-		catch (RuntimeSqlException e) {
-			Log.logger.log(Level.INFO, "Error on creazioneGiornale : \n"+ e);
-		}
-		
 
 		return false;
-		
-	}
-
-	private static boolean createRivista()
-	{
-	Log.logger.log(Level.INFO,"---------Chiamo stored insRiviste---------\n\n");
-	try 
-	{
-		
-		conn=ConnToDb.generalConnection();
-		  sr = new ScriptRunner(conn);
-		 
-		 	
-		 sr.setSendFullScript(true);
-
-		 Reader reader = new BufferedReader(new FileReader("FileSql/storedInsRiviste.sql"));
-	      //Running the script
-	      sr.runScript(reader);
-		
-
-		return true;
-	}
-
-	catch(FileNotFoundException | RuntimeSqlException e1) 
-	{
-		Log.logger.log(Level.SEVERE, "errore mysql", e1);
-	
-	}
-	
-	return false;
 	}
 
 	private static boolean createUser()

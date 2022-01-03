@@ -1,5 +1,6 @@
 package database;
 
+
 public class Config {
 	
 	private String user;
@@ -21,7 +22,12 @@ public class Config {
 		String url="jdbc:mysql://localhost/sys?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 	}
 	
-	
+	public Config( String Database)
+	{
+		this.database = Database;
+		String url="jdbc:mysql://localhost/"+Database+"?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+
+	}
 
 	public String getUser()
 	{
@@ -39,6 +45,6 @@ public class Config {
 	{
 		return this.url;
 	}
-
+	public String getDatabase() {return  this.database;}
 	
 }

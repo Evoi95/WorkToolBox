@@ -10,7 +10,7 @@ import logger.Log;
 public class CreateDefaultDB 
 {
 
-	public static void createDefaultDB () throws  FileNotFoundException
+	public void createDefaultDB () throws  FileNotFoundException
 	{
 		Statement st ;
 		String query ;
@@ -40,12 +40,28 @@ public class CreateDefaultDB
 						"Email VARCHAR(50), pwd VARCHAR(16)," +
 						"pinCode text, gruppo VARCHAR(10)) ;";
 				st.executeUpdate(query);
+				Log.logger.log(Level.INFO,"Tabella Users Creata!");
+
 
 				query="CREATE TABLE IF NOT EXISTS MAILINGLIST" +
 						"(idList INT primary key not null auto_increment," +
 						"managerList int not null," +
 						"FOREIGN KEY (managerList) REFERENCES USERS(idUser) );";
 				st.executeUpdate(query);
+				Log.logger.log(Level.INFO,"Tabella Mailinglist Creata!");
+
+
+				query = "CREATE table if not exists CALENDAR" +
+						"(idAppointment int primary key not null," +
+						" nome VARCHAR(100), orario datetime," +
+						" creator int not null," +
+						" foreign key (creator) references USERS(idUser)" +
+						");";
+
+
+				st.executeUpdate(query);
+				Log.logger.log(Level.INFO,"Tabella Calendar Creata!");
+
 
 				Log.logger.log(Level.INFO,"Tabelle create!");
 				

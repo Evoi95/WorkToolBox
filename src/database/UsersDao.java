@@ -26,7 +26,7 @@ public class UsersDao  {
 	private static int max;
 	private static String r;
 	private static boolean state=false;
-	private static String useDb="USE ISPW;";
+	private final static String useDb="USE toolBox;";
 	
 	
 
@@ -44,23 +44,25 @@ public class UsersDao  {
 				st=conn.createStatement();
 				query=useDb;
 				st.executeQuery(query);
-			 	query= "INSERT INTO `ispw`.`users`"
-			 			+ "(`Nome`,"
-			 			+ "`Cognome`,"
-			 			+ "`Email`,"
-			 			+ "`pwd`,"
-			 			+ "`DataDiNascita`)"
+			 	query= 	"INSERT INTO `toolbox`.`users`" +
+						"(`idUser`," +
+						"`idRuolo`," +
+						"`Nome`," +
+						"`Cognome`," +
+						"`Email`," +
+						"`pwd`," +
+						"`pinCode`," +
+						"`gruppo`)"
 			 			+ "VALUES"
 			 			+" "
-			 			+ "(?,?,?,?,?)";
+			 			+ "(?,?,?,?,?,?,?,?)";
 				prepQ = ConnToDb.conn.prepareStatement(query);	
 				prepQ.setString(1,User.getInstance().getNome()); 
 				prepQ.setString(2,User.getInstance().getCognome()); 
 				prepQ.setString(3,User.getInstance().getEmail());
 		 		prepQ.setString(4, User.getInstance().getPassword());
-		 		
-		 		
-				prepQ.setDate(5, java.sql.Date.valueOf(d));  
+				prepQ.setDate(5, java.sql.Date.valueOf(d));
+
 				prepQ.executeUpdate();
 				
 			 	state= true; 		 			 	
@@ -130,7 +132,7 @@ public class UsersDao  {
 
     //check User email if we found that we return true else we return false
     //Qui viene passato dal controller un oggetto di tipo user
-    public static    int checkUser(User u) throws SQLException
+    public static int checkUser(User u) throws SQLException
     {
     	// ritorna int per motivi legati al controller
     	// anche se lo tratto come boolean

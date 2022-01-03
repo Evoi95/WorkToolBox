@@ -7,16 +7,15 @@ import java.util.logging.Level;
 import logger.Log;
 
 public class User {
-	
 
+	private int idU;
 	private String idRuolo;
 	private String nome;
 	private String cognome; 
 	private String email;
 	private String password;
-	private String descrizione;
-	private LocalDate dataDiNascita;
-	private int idU;
+	private String pinCode;
+	private String gruppo;
 
 	
 	private static User instance =new User();
@@ -65,23 +64,16 @@ public class User {
 		this.password = password;
 	}
 
-	public String getDescrizione() {
-		return descrizione;
+
+
+	public String getGruppo() {	return gruppo;
 	}
 
-	public void setDescrizione(String descrizione) {
-		this.descrizione = descrizione;
+	public void setGruppo(String gruppo) {
+		this.gruppo = gruppo;
 	}
 
-	public LocalDate getDataDiNascita() {
-		return dataDiNascita;
-	}
 
-	public void setDataDiNascita(LocalDate dataDiNascita) {
-		this.dataDiNascita = dataDiNascita;
-	}
-
-	
 	public static User getInstance()
 	{
 		return instance;
@@ -102,7 +94,6 @@ public class User {
 		this.cognome = null;
 		this.email = null;
 		this.password = null;
-		this.dataDiNascita =  null;
 		this.idU=0;
 		
 	}
