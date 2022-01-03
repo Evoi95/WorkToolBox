@@ -1,0 +1,25 @@
+
+=
+java:S1128"'Remove this unused import 'logger.Log'.(×ò£í
+N
+java:S1128"3Remove this unused import 'javafx.fxml.FXMLLoader'.(À‡ô³úÿÿÿÿ
+L
+java:S1128"6Remove this unused import 'javafx.fxml.Initializable'.(™ÎùÆ
+F
+java:S1128"0Remove this unused import 'javafx.scene.Parent'.(²ä¡È
+E
+java:S1128	"/Remove this unused import 'javafx.scene.Scene'.(Õü²
+L
+java:S1128
+"7Remove this unused import 'javafx.scene.control.Alert'.(ÊÇê:
+\
+java:S1128"ARemove this unused import 'javafx.scene.control.Alert.AlertType'.(¯ÈÂ¼üÿÿÿÿ
+U
+java:S1128"?Remove this unused import 'javafx.scene.control.PasswordField'.(êú´Ë
+T
+java:S1128"9Remove this unused import 'javafx.scene.image.ImageView'.(áÿ®Ãüÿÿÿÿ
+P
+java:S1128"5Remove this unused import 'javafx.scene.layout.Pane'.(êÄƒÄşÿÿÿÿ
+J
+java:S1128"/Remove this unused import 'javafx.stage.Stage'.(æÄ¸²úÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Òó¿Íûÿÿÿÿ

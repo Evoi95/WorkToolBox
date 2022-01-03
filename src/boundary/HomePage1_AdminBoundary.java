@@ -1,4 +1,4 @@
-package Boundary;
+package boundary;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
